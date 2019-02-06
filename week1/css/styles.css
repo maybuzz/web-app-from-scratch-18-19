@@ -1,3 +1,32 @@
 body {
-  background-color: yellow;
+  padding: 0 2rem;
+  background-color: #eee;
+}
+
+header {
+  text-align: center;
+}
+
+main {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 2rem;
+}
+
+article {
+  background-color: #fff;
+  border-radius: 10px;
+}
+
+article h1 {
+  padding: 1em 0;
+  margin: 0;
+  text-align: center;
+  background-color: #aaa;
+  width: 100%;
+  border-radius: 10px 10px 0 0;
+}
+
+article p {
+  padding: 0 1.5rem;
 }
