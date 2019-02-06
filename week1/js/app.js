@@ -4,66 +4,21 @@ const url = 'https://ghibliapi.herokuapp.com/films'
 const app = document.getElementById('main')
 
 fetch(url)
-.then((resp) => resp.json())
-.then(function(data) {
+.then(response => response.json())
+.then(movies => {
 
-  let movies = data
+  let content = ''
 
-  return movies.map(function(movie) {
-    console.log(movie)
-
-    const card = document.createElement('article')
-
-    const title = document.createElement('h1')
-          title.textContent = movie.title
-
-    const text = document.createElement('p')
-          text.textContent = movie.description
-
-    app.appendChild(card)
-
-    card.appendChild(title)
-    card.appendChild(text)
-
+  movies.forEach(movie => {
+    content += `<article class="hs">
+    <a href="${movie.id}" target="_blank"><h1>${movie.title}</h1></a>
+    <p>${movie.description}</p>
+    </article>`
   })
-})
 
-.catch(function(error) {
+  app.innerHTML = content
+
+})
+.catch(error => {
     console.log(error)
 })
-
-// var request = new XMLHttpRequest();
-// var url = 'https://ghibliapi.herokuapp.com/films'
-// var app = document.getElementById('main')
-//
-// request.open('GET', url, true)
-//
-// request.onload = function () {
-//
-//   var data = JSON.parse(this.response)
-//
-//   if (request.status >= 200 && request.status < 400) {
-//     data.forEach(movie => {
-//       const card = document.createElement('article')
-//
-//       const title = document.createElement('h1')
-//       title.textContent = movie.title
-//
-//       const detail = document.createElement('a')
-//       detail.textContent = "detail pagina"
-//
-//       const text = document.createElement('p')
-//       text.textContent = movie.description
-//
-//       app.appendChild(card)
-//
-//       card.appendChild(title)
-//       card.appendChild(text)
-//
-//     })
-//   } else {
-//     console.log('error')
-//   }
-// }
-//
-// request.send()
