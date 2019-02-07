@@ -17,8 +17,8 @@
 
 
 ## Hick-ups
-[]Find API
-[]Connect to API 
+- [] Find API
+- [] Connect to API
 
 ## To-do
 
