@@ -1,19 +1,27 @@
-# Week 1 - Hello API 🐒
+# Studio Ghibli API
 
-## Studio Ghibli
+## Table of contents
+1. [Introduction](#Introduction)
+2. [API](#API)
+2. [Concept](#Concept)
+3. [Hick-ups](#Hick-ups)
+8. [To-do](#To-do)
 
-Voor
+## Introduction
 
-- linkToLiveDemo ? review(assignment) : assignGrade(1);
-- Wat doet jou app, wat is het doel? (passing butter)
-- Welke actoren zitten er in jouw applicatie? (actor diagram)
-- Welke API wordt gebruikt en wat zijn de beperkingen? (rate limit)
-- Hoe flowed interactie door de applicatie? (interaction diagram)
-- Welke design patterns en best practices
-- Wat zou je nog willen toevoegen (feature wishlist / backlog)
 
-Doel: Data ophalen uit een API en renderen in een overzichtspagina.
+## API
 
-[Opdrachten](https://drive.google.com/open?id=1OVhWQNaCgSluYviTKKWcApkyPd23xow1PiExb8GYANM)
 
-[Slides](https://drive.google.com/open?id=1Rjl9xqXoKniQSRJPdkU1O5YwWC33SJK8KiV0a-H_xZU)
+## Concept
+
+
+## Hick-ups
+[ ] Find API
+[ ] Connect to API 
+
+## To-do
+
+
+## License
+[MIT](LICENSE) © [Luna May Johansson](https://github.com/maybuzz)
