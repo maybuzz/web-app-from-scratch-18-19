@@ -10,9 +10,9 @@ fetch(url)
   let content = ''
 
   movies.forEach(movie => {
-    content += `<article class="hs">
-    <a href="${movie.id}" target="_blank"><h1>${movie.title}</h1></a>
-    <p>${movie.description}</p>
+    content += `<article class="container">
+    <a class="link" href="${movie.id}" target="_blank"><h1 class="title">${movie.title}</h1></a>
+    <p class="description">${movie.description}</p>
     </article>`
   })
 
