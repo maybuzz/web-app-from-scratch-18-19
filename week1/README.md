@@ -42,7 +42,7 @@ I still want to try using promises only. But I might do this later. This will wo
 
 ## Resources
 - [Studio Ghibli API films](https://ghibliapi.herokuapp.com/films)
-- [API people](https://ghibliapi.herokuapp.com/people/)  
+- [API list of people](https://ghibliapi.herokuapp.com/people/)  
 - [API documentation](https://ghibliapi.herokuapp.com/#)   
 - [Studio Ghibli web app example](https://www.taniarascia.com/how-to-connect-to-an-api-with-javascript/)   
 - [Fetch example](https://scotch.io/tutorials/how-to-use-the-javascript-fetch-api-to-get-data)   
