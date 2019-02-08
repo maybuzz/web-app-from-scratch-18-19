@@ -22,7 +22,9 @@ Then I came across this API, and it was love on first sight. I want to show user
 For the design I'd like to try some sort of horizontal scroll, something like a timeline. Every movie has it's own characters that I'd like to use to tell a story. I could show what characters play in the movies, but I have to set up another request.
 
 ## Hick-ups
-I struggled a
+I struggled a bit with the API connection. At first I tried using a XMLHttpRequest, this worked but I wanted to set it up again using promises. While I was looking for an example I came across the fetch() example. This looked doable, so I gave it a shot. It worked! And I did it myself.
+
+I still want to try using promises only. But I might do this later. This will work for now.
 
 ## To-do
 - [x] Find API   
