@@ -3,12 +3,16 @@
 ![Studio Ghibli website](website.png)
 
 ## Table of contents
+1. [Live Demo](#Live-Demo)
 1. [Introduction](#Introduction)
 2. [API](#API)
 3. [Concept](#Concept)
 4. [Hick-ups](#Hick-ups)
 5. [To-do](#To-do)
 6. [Resources](#Resources)
+
+## Live Demo
+[Click here](https://maybuzz.github.io/wafs) to see my live demo.
 
 ## Introduction
 For this course I chose to work with the Studio Ghibli API. [Studio Ghibli](https://nl.wikipedia.org/wiki/Studio_Ghibli) (株式会社スタジオジブリ) is a Japanese film studio responsible for a lot of anime-movies. Spirited away (2001) is my personal favorite and has been since it came out. This was the main reason I wanted to use this API.
