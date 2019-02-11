@@ -1,0 +1,23 @@
+{
+  "name": "Studio Ghibli webapp",
+  "version": "1.0.0",
+  "description": "main repo cmda-minor-web/web-app-from-scratch-18-19",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/maybuzz/web-app-from-scratch-18-19.git"
+  },
+  "author": "Luna May Johansson",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/maybuzz/web-app-from-scratch-18-19/issues"
+  },
+  "homepage": "https://github.com/maybuzz/web-app-from-scratch-18-19#readme",
+  "dependencies": {
+    "node": "^11.9.0",
+    "routie": "0.0.1"
+  }
+}
