@@ -1,4 +1,4 @@
-# Studio Ghibli API
+# Hello, Studio Ghibli API - Week 1
 
 ![Studio Ghibli website](website.png)
 

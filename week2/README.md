@@ -1,4 +1,4 @@
-# Studio Ghibli API
+# Breakdown Studio Ghibli web app - Week 2
 
 ![Studio Ghibli website](/week1/website.png)
 
