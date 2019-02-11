@@ -1,6 +1,6 @@
 # Studio Ghibli API
 
-![Studio Ghibli website](website.png)
+![Studio Ghibli website](/week1/website.png)
 
 ## Table of contents
 1. [Live Demo](#Live-Demo)
@@ -18,11 +18,11 @@
 
 
 ## Actor diagram
-![Actor diagram V1](actor.png)
+![Actor diagram V1](actor.png)   
 Here you can see the first version of my actor diagram. I tried visualizing all the functionalities my web app will have.
 
 ## Interaction diagram
-![Interaction diagram V1](interaction.png)
+![Interaction diagram V1](interaction.png)   
 Here you can see the first version of my interaction diagram. Here I used parts of my [actor diagram](#Actor-diagram) and combined these with the interactions of my app. This will tell users everything they need to know about the flow of the app.
 
 ## Hick-ups
