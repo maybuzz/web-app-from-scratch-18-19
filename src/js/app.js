@@ -9,8 +9,8 @@ var route = {
 
     let data = await api.getData()
 
-    const goodData = api.formatData(data)
-    const renderOverview = render.overview(goodData)
+    const myData = api.formatData(data)
+    const renderOverview = render.overview(myData)
   },
   detail: function(){
 
@@ -44,8 +44,7 @@ var api = {
 
 
 var render = {
-  overview: function(movies){
-    console.log(movies);
+  overview: movies => {
 
     return movies.forEach(movie => {
 
@@ -64,6 +63,9 @@ var render = {
             card.appendChild(title)
             card.appendChild(text)
     })
+  },
+  detail: function(){
+
   }
 }
 
