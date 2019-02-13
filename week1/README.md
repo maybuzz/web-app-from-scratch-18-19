@@ -1,15 +1,15 @@
 # Hello, Studio Ghibli API - Week 1
 
-![Studio Ghibli website](website.png)
+![Studio Ghibli website](/img/website.png)
 
 ## Table of contents
 1. [Live Demo](#Live-Demo)
-1. [Introduction](#Introduction)
-2. [API](#API)
-3. [Concept](#Concept)
-4. [Hick-ups](#Hick-ups)
-5. [To-do](#To-do)
-6. [Resources](#Resources)
+2. [Introduction](#Introduction)
+3. [API](#API)
+4. [Concept](#Concept)
+5. [Hick-ups](#Hick-ups)
+6. [To-do](#To-do)
+7. [Resources](#Resources)
 
 ## Live Demo
 [Click here](https://maybuzz.github.io/wafs) to see my live demo.
