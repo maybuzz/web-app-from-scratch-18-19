@@ -1,22 +1,71 @@
 'use strict'
 
-fetch('https://ghibliapi.herokuapp.com/films')
-.then(response => response.json())
-.then(movies => {
+var config = {
+  url: "https://ghibliapi.herokuapp.com/films"
+}
 
-  const app = document.getElementById('main')
-  let content = ''
+var route = {
+  overview: async function(){
 
-  movies.forEach(movie => {
-    content += `<article class="container">
-    <a class="link" href="${movie.id}"><h1 class="title">${movie.title}</h1></a>
-    <p class="description">${movie.description}</p>
-    </article>`
-  })
+    let data = await api.getData()
 
-  app.innerHTML = content
+    const goodData = api.formatData(data)
+    const renderOverview = render.overview(goodData)
+  },
+  detail: function(){
 
-})
-.catch(error => {
-    console.log(error)
-})
+  }
+}
+
+
+var api = {
+  getData: function(){
+    return fetch(config.url)
+    .then(response => response.json())
+    .catch(error => {  console.log(error)  })
+
+  },
+  formatData: items => {
+    const itemList = items.map(item => {
+      let format = {
+        id: item.id,
+        title: item.title,
+        description: item.description,
+        date: item.release_date,
+        rtScore: item.rt_score,
+        director: item.director,
+        producer: item.producer
+      }
+      return format
+    })
+    return itemList
+  }
+}
+
+
+var render = {
+  overview: function(movies){
+    console.log(movies);
+
+    return movies.forEach(movie => {
+
+      const app = document.getElementById('main')
+
+      const card = document.createElement('article')
+
+      const title = document.createElement('h1')
+            title.textContent = movie.title
+
+      const text = document.createElement('p')
+            text.textContent = movie.description
+
+            app.appendChild(card)
+
+            card.appendChild(title)
+            card.appendChild(text)
+    })
+  }
+}
+
+
+route.overview()
