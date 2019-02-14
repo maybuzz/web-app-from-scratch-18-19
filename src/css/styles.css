@@ -1,15 +1,20 @@
 body {
+  position: static;
   padding: 0 2rem;
   font-family: 'Dosis', sans-serif;
   line-height: 1.6;
   color: #666;
   background: #F6F6F6;
+
 }
 
 main {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-gap: 1rem;
+  display: flex;
+  overflow: hidden;
+  height: 75vh;
+  scroll-behavior: auto;
+  /* grid-template-columns: repeat(3, 1fr);
+  grid-gap: 1rem; */
 }
 
 header {
@@ -35,11 +40,20 @@ a {
 .logo {
   display: block;
   margin: 1rem auto;
-  max-width: 25%;
+  max-width: 20%;
 }
 
 footer .logo {
   max-width: 15%;
+}
+
+article {
+  width: 50em;
+  /* overflow: hidden; */
+}
+
+article:first-of-type {
+  width: auto;
 }
 
 article:hover {
@@ -58,37 +72,3 @@ article:hover h1 {
   font-size: 1.5rem;
   color: #fff;
 }
-
-
-
-/*
-.container {
-  flex: 0 0 auto;
-  width: 50vw;
-  margin: 0.8rem;
-  background: #fff;
-  box-shadow: 2px 4px 25px rgba(0, 0, 0, .1);
-  border-radius: 12px;
-  overflow: hidden;
-  transition: all .2s linear;
-} */
-
-
-
-/* horizontal scroll */
-
-/* main {
-  grid-template-columns: 20px 1fr 20px;
-}
-
-main > * {
-   grid-column: 2 / -2;
-}
-
-.hs {
-  display: grid;
-  grid-gap: 10px;
-  grid-template-columns: repeat(6, calc(50% - 40px));
-  grid-template-rows: minmax(150px, 1fr);
-  padding: 0 20px;
-} */

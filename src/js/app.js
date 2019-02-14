@@ -1,9 +1,11 @@
 'use strict'
 
+// config url
 var config = {
   url: "https://ghibliapi.herokuapp.com/films"
 }
 
+// routes
 var route = {
   overview: async function(){
 
@@ -17,7 +19,7 @@ var route = {
   }
 }
 
-
+// data
 var api = {
   getData: function(){
     return fetch(config.url)
@@ -25,8 +27,8 @@ var api = {
     .catch(error => {  console.log(error)  })
 
   },
-  formatData: items => {
-    const itemList = items.map(item => {
+  formatData: function(myData){
+    const itemList = myData.map(item => {
       let format = {
         id: item.id,
         title: item.title,
@@ -42,7 +44,7 @@ var api = {
   }
 }
 
-
+// render
 var render = {
   overview: movies => {
 
@@ -58,10 +60,18 @@ var render = {
       const text = document.createElement('p')
             text.textContent = movie.description
 
+      const year = document.createElement('p')
+            year.textContent = movie.date
+
+      const score = document.createElement('p')
+            score.textContent = movie.rtScore
+
             app.appendChild(card)
 
             card.appendChild(title)
             card.appendChild(text)
+            card.appendChild(year)
+            card.appendChild(score)
     })
   },
   detail: function(){
