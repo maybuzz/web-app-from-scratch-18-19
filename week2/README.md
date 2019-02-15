@@ -44,7 +44,7 @@ Here you can see the first version of my interaction diagram. Here I used parts 
 - [ ] Finish detailpage   
 
 ## Resources
-- [Bla](https://Bla)   
+- [id](https://www.peterbe.com/plog/createelement-a)   
 
 ## License
 [MIT](LICENSE) © [Luna May Johansson](https://github.com/maybuzz)
