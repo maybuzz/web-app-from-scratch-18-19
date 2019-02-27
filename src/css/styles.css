@@ -1,3 +1,7 @@
+* {
+  box-sizing: border-box
+}
+
 body {
   position: static;
   padding: 0 2rem;
@@ -5,17 +9,11 @@ body {
   line-height: 1.6;
   color: #666;
   background: #F6F6F6;
-
 }
 
 main {
   display: grid;
-  /* overflow: hidden;
-  height: 75vh;
-  width: 95vw;
-  scroll-behavior: auto; */
   grid-template-columns: repeat(3, 1fr);
-  grid-gap: 1rem;
 }
 
 header {
@@ -23,12 +21,17 @@ header {
 }
 
 h1 {
-  color: #000;
+  text-align: center;
+  padding: 1rem 2rem;
+  background-image: linear-gradient(120deg, #fbc2eb 0%, #a6c1ee 100%);
+  margin: 0 0 2rem 0;
+  font-size: 1.5rem;
+  color: white;
 }
 
 p {
-  padding: 0 2.5rem;
-  margin: 1em;
+  padding: 0 2.5rem 2.5rem;
+  margin: 0;
 }
 
 a {
@@ -41,34 +44,92 @@ a {
 .logo {
   display: block;
   margin: 1rem auto;
-  max-width: 20%;
+  width: 10em;
 }
 
 footer .logo {
-  max-width: 15%;
+  max-width: 15em;
 }
 
 article {
-  /* width: 50rem; */
-}
-
-article:first-of-type {
-  width: auto;
+  min-height: 40vh;
+  max-height: 50vh;
+  margin: 1rem;
+  background: white;
+  box-shadow: 2px 4px 25px rgba(0, 0, 0, .1);
+  border-radius: 12px;
+  overflow: hidden;
+  transition: all .2s linear;
 }
 
 article:hover {
-  background-color: #fff;
-  border-radius: 10px;
   box-shadow: 2px 8px 45px rgba(0, 0, 0, .15);
-  transform: translate3D(0, -5px, 0);
+  transform: translate3D(0, -2px, 0);
 }
 
-article:hover h1 {
-  color: #fff;
-  font-size: 1.5rem;
+article:nth-child(2n) h1 {
+  background-image: linear-gradient(120deg, #84fab0 0%, #8fd3f4 100%);
+}
+
+article:nth-child(4n) h1 {
+  background-image: linear-gradient(120deg, #ff9a9e 0%, #fecfef 100%);
+}
+
+article:nth-child(5n) h1 {
+  background-image: linear-gradient(120deg, #ffc3a0 0%, #ffafbd 100%);
+}
+
+section {
   text-align: center;
-  padding: 1rem 2rem;
-  margin: 0;
-  border-radius: 10px 10px 0 0;
+  grid-column: span 3;
+  margin-left: 10em;
+  margin-right: 10em;
+}
+
+section > h1 {
+  background: none;
+  color: #000;
+  margin: 1.5rem 0;
+  padding: 0;
+}
+
+section > h3 {
+  padding: 0;
+  margin: 1rem 0 0;
+}
+
+section > p {
+  padding: .8rem 0;
+}
+
+section > a {
   background-image: linear-gradient(120deg, #fbc2eb 0%, #a6c1ee 100%);
+  padding: .5rem 1rem;
+  display: block;
+  margin-top: 1rem;
+  color: #fff;
+  border-radius: 10px;
+}
+
+@media (max-width: 60em) {
+  main {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  article {
+    min-height: 40vh;
+    max-height: 60vh;
+  }
+
+}
+
+@media (max-width: 42em) {
+  main {
+    grid-template-columns: 1fr;
+  }
+
+  article {
+    min-height: 30vh;
+    max-height: 50vh;
+  }
 }
