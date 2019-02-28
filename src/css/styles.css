@@ -20,12 +20,23 @@ header {
   text-align: center;
 }
 
+.logo {
+  display: block;
+  margin: 1rem auto;
+  width: 10em;
+}
+
+footer .logo {
+  max-width: 15em;
+}
+
+/* overview page */
 h1 {
   text-align: center;
   padding: 1rem 2rem;
   background-image: linear-gradient(120deg, #fbc2eb 0%, #a6c1ee 100%);
   margin: 0 0 2rem 0;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   color: white;
 }
 
@@ -39,16 +50,6 @@ a {
   padding: 0;
   text-decoration: none;
   color: #000;
-}
-
-.logo {
-  display: block;
-  margin: 1rem auto;
-  width: 10em;
-}
-
-footer .logo {
-  max-width: 15em;
 }
 
 article {
@@ -67,18 +68,7 @@ article:hover {
   transform: translate3D(0, -2px, 0);
 }
 
-article:nth-child(2n) h1 {
-  background-image: linear-gradient(120deg, #84fab0 0%, #8fd3f4 100%);
-}
-
-article:nth-child(4n) h1 {
-  background-image: linear-gradient(120deg, #ff9a9e 0%, #fecfef 100%);
-}
-
-article:nth-child(5n) h1 {
-  background-image: linear-gradient(120deg, #ffc3a0 0%, #ffafbd 100%);
-}
-
+/* detail page */
 section {
   text-align: center;
   grid-column: span 3;
@@ -111,6 +101,52 @@ section > a {
   border-radius: 10px;
 }
 
+/* loading state */
+#spinner {
+  grid-column: span 3;
+  width: 40px;
+  height: 40px;
+  position: relative;
+  margin: 100px auto;
+}
+
+.double-bounce1, .double-bounce2 {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background-color: #333;
+  opacity: 0.6;
+  position: absolute;
+  top: 0;
+  left: 0;
+  -webkit-animation: sk-bounce 2.0s infinite ease-in-out;
+  animation: sk-bounce 2.0s infinite ease-in-out;
+}
+
+.double-bounce2 {
+  -webkit-animation-delay: -1.0s;
+  animation-delay: -1.0s;
+}
+
+@-webkit-keyframes sk-bounce {
+  0%, 100% {
+    -webkit-transform: scale(0.0)
+  } 50% {
+    -webkit-transform: scale(1.0)
+  }
+}
+
+@keyframes sk-bounce {
+ 0%, 100% {
+   transform: scale(0.0);
+   -webkit-transform: scale(0.0);
+ } 50% {
+   transform: scale(1.0);
+   -webkit-transform: scale(1.0);
+ }
+}
+
+/* tablet */
 @media (max-width: 60em) {
   main {
     grid-template-columns: repeat(2, 1fr);
@@ -123,6 +159,7 @@ section > a {
 
 }
 
+/* mobile */
 @media (max-width: 42em) {
   main {
     grid-template-columns: 1fr;
