@@ -25,7 +25,6 @@
     hash: () => {
       window.addEventListener('hashchange', () => {
         let movieID = window.location.hash.substr(1)
-        const clearAll = clear.clearView()
         const renderDetail = router.handle(movieID)
       })
     }
@@ -79,17 +78,17 @@
       })
     }
   }
-
-  const clear = {
-    clearView: () => {
-      console.log('clear: getData')
-      const app = document.getElementById('main')
-
-      while (app.firstChild) {
-          app.removeChild(app.firstChild)
-      }
-    }
-  }
+  //
+  // const clear = {
+  //   clearView: () => {
+  //     console.log('clear: getData')
+  //     const app = document.getElementById('main')
+  //
+  //     while (app.firstChild) {
+  //         app.removeChild(app.firstChild)
+  //     }
+  //   }
+  // }
 
   const render = {
     overview: (movies) => {
@@ -128,6 +127,12 @@
     detail: (movieID) => {
       console.log('render: detail')
 
+      const app = document.getElementById('main')
+
+      while (app.firstChild) {
+          app.removeChild(app.firstChild)
+      }
+
       if(document.getElementById('spinner') != undefined){
         document.getElementById('spinner').remove()
       }
@@ -138,8 +143,6 @@
         render.error('id undefined')
         return
       }
-
-      const app = document.getElementById('main')
 
       const section = document.createElement('section')
 
