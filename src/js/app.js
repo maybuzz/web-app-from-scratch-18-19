@@ -16,10 +16,11 @@
   const router = {
     handle: () => {
       let hash = window.location.hash.split('#')[1]
+
       if (window.localStorage.getItem('movie-'+hash)) {
         console.log('router: handle for '+hash)
         routes.detail(hash)
-      } else {
+      } else if (true) {
         console.log('router: handle for overview' );
         window.location.hash = ''
         routes.overview()
@@ -27,8 +28,9 @@
     },
     hash: () => {
       window.addEventListener('hashchange', () => {
+        console.log("hash")
         let movieID = window.location.hash.substr(1)
-        const renderDetail = router.handle(movieID)
+        const renderDetail = render.detail(movieID)
       })
     }
   }
@@ -89,7 +91,10 @@
   const render = {
     overview: (movies) => {
       console.log('render: overview')
-      document.getElementById('spinner').remove()
+
+      if(document.getElementById('spinner') != undefined){
+        document.getElementById('spinner').remove()
+      }
 
       movies = Object.keys(window.localStorage).filter((v) => v.startsWith('movie-'))
 
@@ -214,9 +219,11 @@
 
     },
     error: (err) => {
-      console.warn('application err: ', err)
+      console.warn('application err: ',err)
 
-      document.getElementById('spinner').remove()
+      if(document.getElementById('spinner') != undefined){
+        document.getElementById('spinner').remove()
+      }
 
       const app = document.getElementById('main')
 
