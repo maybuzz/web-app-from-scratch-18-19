@@ -1,5 +1,7 @@
 (() => {
 
+  // initialize application, send to router.handle of router.hash to check url
+  // base url
   const app = {
     init: () => {
       router.handle()
@@ -10,6 +12,7 @@
     }
   }
 
+  // router handler and hash
   const router = {
     handle: () => {
       let hash = window.location.hash.split('#')[1]
@@ -30,6 +33,7 @@
     }
   }
 
+  // define routes to overview and detail page
   const routes = {
     overview: async () => {
 
@@ -51,6 +55,7 @@
     }
   }
 
+  // connect to api and structure data
   const api = {
     getData: () => {
       return fetch(app.config.url)
@@ -78,18 +83,9 @@
       })
     }
   }
-  //
-  // const clear = {
-  //   clearView: () => {
-  //     console.log('clear: getData')
-  //     const app = document.getElementById('main')
-  //
-  //     while (app.firstChild) {
-  //         app.removeChild(app.firstChild)
-  //     }
-  //   }
-  // }
 
+  // render templates for overview and detail page
+  // render loading state (spinner) and error page
   const render = {
     overview: (movies) => {
       console.log('render: overview')
@@ -247,6 +243,7 @@
     }
   }
 
+  // start application
   app.init()
 
 })()
