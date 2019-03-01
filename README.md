@@ -110,6 +110,7 @@ Here I used parts of my [actor diagram](#Actor-diagram) and combined these with 
 - [API documentation](https://ghibliapi.herokuapp.com/#)   
 - [Studio Ghibli web app example](https://www.taniarascia.com/how-to-connect-to-an-api-with-javascript/)   
 - [Fetch example](https://scotch.io/tutorials/how-to-use-the-javascript-fetch-api-to-get-data)   
+- [Razpudding CodePen](https://codepen.io/Razpudding/pen/wNZoNQ?editors=0010)
 
 ## License
 [MIT](LICENSE) © [Luna May Johansson](https://github.com/maybuzz)
