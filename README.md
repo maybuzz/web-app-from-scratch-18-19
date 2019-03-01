@@ -16,7 +16,7 @@ A single page web app using the Studio Ghibli API. This application has a overvi
 9. [Resources](#Resources)
 
 ## Live demo
-[Click here](https://maybuzz.github.io/wafs) to see my live demo.
+[Click here](https://maybuzz.github.io/wafs/src) to see my live demo.
 
 ## Install
 This project doesn't have ant dependencies. Fork this project and clone it using the terminal. Start a live-server on the src folder to open the application in your browser.
