@@ -26,10 +26,11 @@
         routes.overview()
       }
     },
-    // hash
+    // hash change control
+    // hash + id = router.handle()
+    // hash + invalid id = render.detail() -> error()
     hash: () => {
       window.addEventListener('hashchange', () => {
-        // let hash = 
 
         let movieID = window.location.hash.substr(1)
         if (window.localStorage.getItem('movie-'+window.location.hash.split('#')[1])){
