@@ -1,3 +1,6 @@
+// code structure (obj literals and names) from Laurens Aarnoudse @razpudding 
+// https://codepen.io/Razpudding/pen/wNZoNQ?editors=0010
+
 (() => {
 
   // initialize application, send to router.handle of router.hash to check url
