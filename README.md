@@ -79,7 +79,7 @@ Here you can see my actor diagram. This contains the main flow of my application
 
 ## Interaction
 Here I used parts of my [actor diagram](#Actor-diagram) and combined these with the interactions of my app. This will tell users everything they need to know about the flow of the app. It shows all the functionalities and how they interact with each other.
-![Interaction diagram](/img/interaction-final.png)   
+![Interaction diagram](/img/interaction-final-final.png)   
 
 ## To-do
 - [x] Connect to API   
