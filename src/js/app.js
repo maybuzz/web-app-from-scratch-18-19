@@ -27,8 +27,7 @@
       }
     },
     // hash change control
-    // hash + id = router.handle()
-    // hash + invalid id = render.detail() -> error()
+    // hash + id = back to handle, hash + invalid id = error
     hash: () => {
       window.addEventListener('hashchange', () => {
 
