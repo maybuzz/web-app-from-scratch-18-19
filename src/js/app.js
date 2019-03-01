@@ -1,3 +1,9 @@
+// check indenting
+// check naming
+// set to modules
+// check logs om diagrams te maken
+// sorteer functies
+
 (() => {
 
   const app = {
@@ -11,32 +17,6 @@
     }
   }
 
-  const routes = {
-    overview: async () => {
-
-      console.log("routes: overview")
-
-      render.onload()
-
-      api.getData()
-        .then((data) => {
-          const allData = api.formatData(data)
-          const renderOverview = render.overview(allData)
-        })
-        .catch((err) => { console.warn(err); render.error("data error") })
-    },
-    detail: (id) => {
-
-      console.log("routes: detail")
-
-      render.onload()
-
-      const renderDetail = render.detail(id)
-
-    }
-  }
-
-  // NOG NIET AF
   const router = {
     handle: () => {
       let hash = window.location.hash.split("#")[1]
@@ -53,14 +33,40 @@
       window.addEventListener("hashchange", () => {
         let movieID = window.location.hash.substr(1)
         const clearAll = clear.clearView()
-        const detail = render.detail(movieID)
+        const renderDetail = render.detail(movieID)
       })
+    }
+  }
+
+  const routes = {
+    overview: async () => {
+
+      console.log("routes: overview")
+
+      render.onload()
+
+      api.getData()
+        .then((allData) => {
+          const cleanData = api.formatData(allData)
+          const renderOverview = render.overview(cleanData)
+        })
+        .catch((err) => { console.warn(err); render.error("data error") })
+    },
+    detail: (id) => {
+
+      console.log("routes: detail")
+
+      render.onload()
+
+      const renderDetail = render.detail(id)
+
     }
   }
 
   const api = {
     getData: () => {
       console.log("api: getData")
+
       return fetch(app.config.url)
       .then((response) => { return response.json() })
       .catch((err) => { console.warn(err); render.error("api error") })
@@ -87,29 +93,6 @@
     }
   }
 
-  // NOG NIET AF
-  const storage = {
-    setLocal: () => {
-      window.localStorage.getItem('hash')
-    }
-  }
-
-  // NOG NIET AF
-  // NOG NIET AF
-  const utilities = {
-    sortByYear: () => {
-      console.log("sort by year")
-      // data uit localStorage halen
-      // nieuwe array maken, gesorteerd op jaar
-    },
-    sortByRTScore: () => {
-      console.log("sort by RT score")
-      // data uit localStorage halen
-      // nieuwe array maken, gesorteerd op RT score
-    }
-  }
-
-  // VERWERKEN IN OBJ
   const clear = {
     clearView: () => {
       console.log("clear: getData")
@@ -118,26 +101,18 @@
       while (app.firstChild) {
           app.removeChild(app.firstChild)
       }
-    },
-    removeLoad: () => {
-      console.log("clear: load")
-
-      const app = document.getElementById('main')
-      while (app.firstChild) {
-          app.removeChild(app.firstChild)
-      }
     }
   }
 
   const render = {
-    overview: movies => {
+    overview: (movies) => {
       document.getElementById('spinner').remove()
 
       console.log("render: overview")
 
-      movies = Object.keys(window.localStorage).filter(v => v.startsWith('movie-'))
+      movies = Object.keys(window.localStorage).filter((v) => v.startsWith('movie-'))
 
-      return movies.forEach(movie => {
+      return movies.forEach((movie) => {
 
         var data = JSON.parse(window.localStorage.getItem(movie))
 
@@ -164,7 +139,7 @@
               card.appendChild(text)
       })
     },
-    detail: movieID => {
+    detail: (movieID) => {
 
       console.log("render: detail")
 
@@ -232,7 +207,6 @@
 
     },
     onload: () => {
-      console.log("loading")
 
       const app = document.getElementById('main')
 
@@ -280,6 +254,26 @@
             section.appendChild(link)
     }
   }
+
   app.init()
 
 })()
+
+// const storage = {
+//   setLocal: () => {
+//     window.localStorage.getItem('hash')
+//   }
+// }
+
+// const utilities = {
+//   sortByYear: () => {
+//     console.log("sort by year")
+//     // data uit localStorage halen
+//     // nieuwe array maken, gesorteerd op jaar
+//   },
+//   sortByRTScore: () => {
+//     console.log("sort by RT score")
+//     // data uit localStorage halen
+//     // nieuwe array maken, gesorteerd op RT score
+//   }
+// }

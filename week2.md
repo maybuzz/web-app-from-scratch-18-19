@@ -31,17 +31,15 @@ Here you can see the first version of my interaction diagram. Here I used parts 
 ## To-do
 - [x] List functionalities   
 - [x] Sketch actor diagram V1   
-- [ ] Final **actor diagram**   
+- [x] Final **actor diagram**   
 - [x] List interactions   
 - [x] Sketch interaction diagram V1   
-- [ ] Final **interaction diagram**   
-- [ ] Refactor code   
-- [ ] Install **routie** (micro library)   
+- [x] Final **interaction diagram**   
+- [x] Refactor code   
 - [ ] Setup router using routie   
-- [ ] Setup router by yourself   
-- [ ] Pick template engine   
+- [x] Setup router by yourself   
 - [ ] Implement **template engine**   
-- [ ] Finish detailpage   
+- [x] Finish detailpage   
 
 ## Resources
 - [id](https://www.peterbe.com/plog/createelement-a)   
