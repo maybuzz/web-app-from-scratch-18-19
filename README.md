@@ -3,7 +3,7 @@
 ## Summary
 A single page web app using the Studio Ghibli API. This application has a overview page to show all the movies. The detail page shows more information about movie.
 
-![Studio Ghibli website](/img/website.png)
+![Studio Ghibli website](/img/website-final.png)
 
 ## Table of contents
 1. [Live demo](#Live-demo)
@@ -41,7 +41,7 @@ Here I use `fetch` to connect to the API. After fetching the data I return the d
   getData: () => {
     return fetch('https://ghibliapi.herokuapp.com/films/')
     .then((response) => { return response.json() })
-    .catch((err) => { console.warn(err); render.error("api error") })
+    .catch((err) => { console.warn(err); render.error('api error') })
   }
 ```
 

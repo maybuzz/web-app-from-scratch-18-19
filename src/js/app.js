@@ -33,7 +33,7 @@
       window.addEventListener("hashchange", () => {
         let movieID = window.location.hash.substr(1)
         const clearAll = clear.clearView()
-        const renderDetail = render.detail(movieID)
+        const renderDetail = router.handle(movieID)
       })
     }
   }
@@ -140,6 +140,8 @@
       })
     },
     detail: (movieID) => {
+
+      document.getElementById('spinner').remove()
 
       console.log("render: detail")
 

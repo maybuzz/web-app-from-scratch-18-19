@@ -2,7 +2,7 @@
   "name": "Studio Ghibli webapp",
   "version": "1.0.0",
   "description": "main repo cmda-minor-web/web-app-from-scratch-18-19",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
