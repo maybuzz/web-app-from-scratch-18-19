@@ -1,7 +1,7 @@
-import { router } from '/js/router.js'
-import { routes } from '/js/routes.js'
+import { router } from '/src/js/modules/router.js'
+import { routes } from '/src/js/modules/routes.js'
 
-const render = {
+export const render = {
   overview: (movies) => {
     console.log('render: overview')
 
@@ -162,5 +162,3 @@ const render = {
           section.appendChild(link)
   }
 }
-
-export default { render }

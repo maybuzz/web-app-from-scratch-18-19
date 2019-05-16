@@ -1,8 +1,10 @@
-const api = {
+import { app } from '/src/js/modules/app.js'
+
+export const api = {
   getData: () => {
     return fetch(app.config.url)
     .then((response) => { return response.json() })
-    .catch((err) => { console.warn(err);
+    .catch((err) => { console.warn(err)
       .error('api error') })
   },
   formatData: (data) => {
@@ -26,5 +28,3 @@ const api = {
     })
   }
 }
-
-export default { api }
