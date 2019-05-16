@@ -1,6 +1,6 @@
-import { router } from '/src/js/modules/router.js'
+import router from '/src/js/modules/router.js'
 
-export const app = {
+const app = {
   init: () => {
     router.handle()
     router.hash()
@@ -9,3 +9,5 @@ export const app = {
     url: 'https://ghibliapi.herokuapp.com/films/'
   }
 }
+
+export default app

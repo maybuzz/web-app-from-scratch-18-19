@@ -1,8 +1,8 @@
-import { app } from '/src/js/modules/app.js'
-import { routes } from '/src/js/modules/routes.js'
+import app from '/src/js/modules/app.js'
+import routes from '/src/js/modules/routes.js'
 
 // router handler and hash
-export const router = {
+const router = {
   handle: () => {
     let hash = window.location.hash.split('#')[1]
 
@@ -30,4 +30,4 @@ export const router = {
   }
 }
 
-export { render } from '/src/js/modules/render.js'
+export default router 

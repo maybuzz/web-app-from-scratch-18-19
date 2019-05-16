@@ -1,6 +1,6 @@
-import { app } from '/src/js/modules/app.js'
+import app from '/src/js/modules/app.js'
 
-export const api = {
+const api = {
   getData: () => {
     return fetch(app.config.url)
     .then((response) => { return response.json() })
@@ -28,3 +28,5 @@ export const api = {
     })
   }
 }
+
+export default api

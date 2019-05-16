@@ -1,8 +1,8 @@
-import { router } from '/src/js/modules/router.js'
-import { render } from '/src/js/modules/render.js'
-import { api } from '/src/js/modules/api.js'
+import router from '/src/js/modules/router.js'
+import render from '/src/js/modules/render.js'
+import api from '/src/js/modules/api.js'
 
-export const routes = {
+const routes = {
   overview: () => {
 
     render.onload()
@@ -22,3 +22,5 @@ export const routes = {
 
   }
 }
+
+export default routes
