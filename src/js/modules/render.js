@@ -51,9 +51,9 @@ const render = {
       document.getElementById('spinner').remove()
     }
 
-    const movieData = JSON.parse(localStorage.getItem('movie-'+movieID))
+    const detailData = JSON.parse(localStorage.getItem('movie-'+movieID))
 
-    if (movieData === null) {
+    if (detailData === null) {
       render.error('id undefined')
       return
     }
@@ -66,7 +66,7 @@ const render = {
 
     const title = document.createElement('h1')
           title.setAttribute('class', 'title')
-          title.textContent = movieData.title
+          title.textContent = detailData.title
 
     const heading1 = document.createElement('h3')
           heading1.textContent = 'director'
@@ -79,23 +79,23 @@ const render = {
 
     const text = document.createElement('p')
           text.setAttribute('class', 'text')
-          text.textContent = movieData.description
+          text.textContent = detailData.description
 
     const director = document.createElement('p')
           director.setAttribute('class', 'director')
-          director.textContent = movieData.director
+          director.textContent = detailData.director
 
     const producer = document.createElement('p')
           producer.setAttribute('class', 'producer')
-          producer.textContent = movieData.producer
+          producer.textContent = detailData.producer
 
     const year = document.createElement('p')
           year.setAttribute('class', 'year')
-          year.textContent = movieData.date
+          year.textContent = detailData.date
 
     const score = document.createElement('p')
           score.setAttribute('class', 'score')
-          score.textContent = movieData.rtScore
+          score.textContent = detailData.rtScore
 
 
           app.appendChild(section)

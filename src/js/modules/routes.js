@@ -12,7 +12,10 @@ const routes = {
         const cleanData = api.formatData(allData)
         const renderOverview = render.overview(cleanData)
       })
-      .catch((err) => { console.warn(err); render.error('data error') })
+      .catch((err) => {
+        console.warn(err)
+        render.error('data error')
+      })
   },
   detail: (id) => {
 

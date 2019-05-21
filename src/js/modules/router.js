@@ -1,5 +1,6 @@
 import app from '/src/js/modules/app.js'
 import routes from '/src/js/modules/routes.js'
+import render from '/src/js/modules/render.js'
 
 // router handler and hash
 const router = {
@@ -30,4 +31,4 @@ const router = {
   }
 }
 
-export default router 
+export default router

@@ -88,17 +88,15 @@ Here I used parts of my [actor diagram](#Actor-diagram) and combined these with 
   - [ ] Link to next movie   
 - [ ] Add another API call   
 - [x] Setup router by yourself   
-- [ ] Setup router using routie   
 - [x] Use textContent instead of inner HTML
-- [ ] Use **template engine**   
 - [x] Use object literals
-- [ ] Use modules   
+- [x] Use modules   
 - [x] Refactor code   
 - [x] States   
   - [x] Error page   
   - [x] Loading state
-- [ ] **Actor diagram**   
-- [ ] **Interaction diagram**   
+- [x] **Actor diagram**   
+- [x] **Interaction diagram**   
 - [x] Styling   
 - [ ] Extra   
   - [ ] Filter and sort options   
