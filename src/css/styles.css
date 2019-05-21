@@ -1,5 +1,7 @@
 * {
-  box-sizing: border-box
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
 }
 
 body {
@@ -20,10 +22,39 @@ header {
   text-align: center;
 }
 
+ul {
+  display: flex;
+}
+
+li:first-of-type {
+
+}
+
+li:last-of-type {
+  margin-left: auto;
+  margin-top: 2.5rem;
+  margin-right: 1rem;
+}
+
 .logo {
-  display: block;
-  margin: 1rem auto;
+  display: inline-block;
   width: 10em;
+}
+
+.btn {
+  background-color: #ddd;
+  border: solid 1px #aaa;
+  border-radius: 10px;
+  padding: .3rem 1.5rem;
+  font-size: 1.25rem;
+  margin-right: .25rem;
+}
+
+.btn:hover, .btn:focus {
+  background-image: linear-gradient(120deg, #fbc2eb 0%, #a6c1ee 100%);
+  box-shadow: 2px 4px 25px rgba(0, 0, 0, .1);
+  border-color: purple;
+  color: purple;
 }
 
 footer .logo {
@@ -67,36 +98,66 @@ article:hover {
 }
 
 /* detail page */
-section {
-  text-align: center;
-  grid-column: span 3;
-  margin-left: 10em;
-  margin-right: 10em;
+.left {
+  grid-column: span 2;
+  text-align: left;
+  margin-top: 5rem;
+  margin-right: 5rem;
+  margin-left: 2.5rem;
 }
 
-section > h1 {
+.right {
+  grid-column: span 1;
+  text-align: right;
+  margin-top: 5rem;
+  margin-left: 5rem;
+  margin-right: 2.5rem;
+}
+
+.title {
+  text-align: left;
   background: none;
   color: #000;
   margin: 1.5rem 0;
   padding: 0;
+  margin-top: 3rem;
 }
 
-section > h3 {
+.heading {
+  margin-top: 2rem;
+}
+
+.heading:first-of-type {
+  margin-top: 0;
+}
+
+.info {
   padding: 0;
   margin: 1rem 0 0;
 }
 
-section > p {
+.text {
   padding: .8rem 0;
 }
 
-section > a {
+.link {
   background-image: linear-gradient(120deg, #fbc2eb 0%, #a6c1ee 100%);
   padding: .5rem 1rem;
-  display: block;
-  margin-top: 1rem;
   color: #fff;
   border-radius: 10px;
+  width: 10rem;
+  text-align: center;
+}
+
+/* error page */
+.sectionErr {
+  grid-column: span 3;
+  text-align: center;
+}
+
+.error {
+  border-radius: 50px;
+  margin-top: 5rem;
 }
 
 /* loading state */
@@ -155,11 +216,16 @@ section > a {
     max-height: 60vh;
   }
 
-  section {
-    text-align: center;
-    grid-column: span 2;
-    margin-left: 5em;
-    margin-right: 5em;
+  .left {
+    grid-column: span 1;
+    margin-right: 0;
+    margin-left: 0;
+  }
+
+  .right {
+    grid-column: span 1;
+    margin-left: 0;
+    margin-right: 0;
   }
 
 }
@@ -175,10 +241,21 @@ section > a {
     max-height: 50vh;
   }
 
-  section {
+  .title {
     text-align: center;
-    grid-column: span 1;
-    margin-left: 2em;
-    margin-right: 2em;
+  }
+
+  .link {
+    text-align: center;
+  }
+
+  .left {
+    text-align: center;
+    margin-top: 1rem;
+  }
+
+  .right {
+    text-align: center;
+    margin-top: 1rem;
   }
 }

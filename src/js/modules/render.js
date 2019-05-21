@@ -9,33 +9,97 @@ const render = {
       document.getElementById('spinner').remove()
     }
 
-    movies = Object.keys(window.localStorage).filter((v) => v.startsWith('movie-'))
+    const btns = document.getElementById('btns')
+
+    const app = document.getElementById('main')
+
+    const btn = document.createElement('a')
+          btn.setAttribute('class', 'btn')
+          btn.setAttribute('id', 'people')
+          btn.textContent = 'characters'
+
+          btns.appendChild(btn)
+
+    btn.addEventListener('click', () => {
+      while (app.firstChild) {
+          app.removeChild(app.firstChild)
+      }
+      routes.people()
+      btns.removeChild(btn)
+    })
 
     return movies.forEach((movie) => {
-
-      var data = JSON.parse(window.localStorage.getItem(movie))
 
       const app = document.getElementById('main')
 
       const card = document.createElement('article')
 
       const title = document.createElement('h1')
-            title.textContent = data.title
+            title.textContent = movie.title
 
       const link = document.createElement('a')
-            link.setAttribute('href', '#' + data.id)
+            link.setAttribute('href', '#' + movie.id)
 
       const text = document.createElement('p')
-            text.setAttribute('class', 'text')
-            data.description = data.description
-            data.description = data.description.substring(0, 200)
-            text.textContent = `${data.description}...`
+            text.setAttribute('class', 'desc')
+            movie.description = movie.description
+            movie.description = movie.description.substring(0, 200)
+            text.textContent = `${movie.description}...`
 
             app.appendChild(link)
             link.appendChild(card)
 
             card.appendChild(title)
             card.appendChild(text)
+    })
+  },
+  people: (people) => {
+    console.log('render: people')
+
+    const app = document.getElementById('main')
+
+    if(document.getElementById('spinner') != undefined){
+      document.getElementById('spinner').remove()
+    }
+
+    const btns = document.getElementById('btns')
+
+    const btn = document.createElement('a')
+          btn.setAttribute('class', 'btn')
+          btn.setAttribute('id', 'movies')
+          btn.textContent = 'movies'
+
+          btns.appendChild(btn)
+
+    btn.addEventListener('click', () => {
+      while (app.firstChild) {
+          app.removeChild(app.firstChild)
+      }
+      routes.overview()
+      btns.removeChild(btn)
+
+    })
+
+    people = Object.keys(window.localStorage).filter((v) => v.startsWith('people-'))
+
+    return people.forEach((person) => {
+
+      var data = JSON.parse(window.localStorage.getItem(person))
+
+      const app = document.getElementById('main')
+
+      const card = document.createElement('article')
+
+      const name = document.createElement('h1')
+            name.textContent = data.name
+
+      const link = document.createElement('a')
+            link.setAttribute('href', '#' + data.id)
+
+            app.appendChild(link)
+            link.appendChild(card)
+
+            card.appendChild(name)
     })
   },
   detail: (movieID) => {
@@ -51,65 +115,73 @@ const render = {
       document.getElementById('spinner').remove()
     }
 
-    const detailData = JSON.parse(localStorage.getItem('movie-'+movieID))
+    const section1 = document.createElement('section')
+          section1.setAttribute('class', 'left')
 
-    if (detailData === null) {
-      render.error('id undefined')
-      return
-    }
-
-    const section = document.createElement('section')
+    const section2 = document.createElement('section')
+          section2.setAttribute('class', 'right')
 
     const link = document.createElement('a')
           link.setAttribute('href', '/src')
+          link.setAttribute('class', 'link')
           link.textContent = 'terug naar overzicht'
 
     const title = document.createElement('h1')
           title.setAttribute('class', 'title')
-          title.textContent = detailData.title
+          title.textContent = movieID[1][1]
 
     const heading1 = document.createElement('h3')
+          heading1.setAttribute('class', 'heading')
           heading1.textContent = 'director'
 
     const heading2 = document.createElement('h3')
+          heading2.setAttribute('class', 'heading')
           heading2.textContent = 'producer'
 
     const heading3 = document.createElement('h3')
+          heading3.setAttribute('class', 'heading')
           heading3.textContent = 'rotten tomatoes'
+
+    const heading4 = document.createElement('h3')
+          heading4.setAttribute('class', 'heading')
+          heading4.textContent = 'year'
 
     const text = document.createElement('p')
           text.setAttribute('class', 'text')
-          text.textContent = detailData.description
+          text.textContent = movieID[2][1]
 
     const director = document.createElement('p')
-          director.setAttribute('class', 'director')
-          director.textContent = detailData.director
+          director.setAttribute('class', 'info')
+          director.textContent = movieID[3][1]
 
     const producer = document.createElement('p')
-          producer.setAttribute('class', 'producer')
-          producer.textContent = detailData.producer
+          producer.setAttribute('class', 'info')
+          producer.textContent = movieID[4][1]
 
     const year = document.createElement('p')
-          year.setAttribute('class', 'year')
-          year.textContent = detailData.date
+          year.setAttribute('class', 'info')
+          year.textContent = movieID[5][1]
 
     const score = document.createElement('p')
-          score.setAttribute('class', 'score')
-          score.textContent = detailData.rtScore
+          score.setAttribute('class', 'info')
+          score.textContent = movieID[6][1]
 
 
-          app.appendChild(section)
+          app.appendChild(section1)
+          app.appendChild(section2)
 
-          section.appendChild(link)
-          section.appendChild(title)
-          section.appendChild(text)
-          section.appendChild(year)
-          section.appendChild(heading3)
-          section.appendChild(score)
-          section.appendChild(heading1)
-          section.appendChild(director)
-          section.appendChild(heading2)
-          section.appendChild(producer)
+          section1.appendChild(link)
+          section1.appendChild(title)
+          section1.appendChild(text)
+
+          section2.appendChild(heading4)
+          section2.appendChild(year)
+          section2.appendChild(heading1)
+          section2.appendChild(director)
+          section2.appendChild(heading2)
+          section2.appendChild(producer)
+          section2.appendChild(heading3)
+          section2.appendChild(score)
 
   },
   onload: () => {
@@ -140,10 +212,12 @@ const render = {
 
     const app = document.getElementById('main')
 
-    const section = document.createElement('section')
+    const sectionErr = document.createElement('section')
+          sectionErr.setAttribute('class', 'sectionErr')
 
     const link = document.createElement('a')
           link.setAttribute('href', '/src')
+          link.setAttribute('class', 'link')
           link.textContent = 'terug naar overzicht'
 
     const title = document.createElement('h1')
@@ -151,15 +225,15 @@ const render = {
           title.textContent = 'error'
 
     const text = document.createElement('p')
-          text.setAttribute('class', 'text')
+          text.setAttribute('class', 'textErr')
           text.textContent = 'Oops... something went wrong'
 
 
-          app.appendChild(section)
+          app.appendChild(sectionErr)
 
-          section.appendChild(title)
-          section.appendChild(text)
-          section.appendChild(link)
+          sectionErr.appendChild(title)
+          sectionErr.appendChild(text)
+          sectionErr.appendChild(link)
   }
 }
 

@@ -1,4 +1,5 @@
 import app from '/src/js/modules/app.js'
+import api from '/src/js/modules/api.js'
 import routes from '/src/js/modules/routes.js'
 import render from '/src/js/modules/render.js'
 
@@ -7,9 +8,13 @@ const router = {
   handle: () => {
     let hash = window.location.hash.split('#')[1]
 
-    if (window.localStorage.getItem('movie-'+hash)) {
+    if (hash) {
       console.log('router: handle for '+hash)
       routes.detail(hash)
+    } else if (window.localStorage.getItem('people-'+hash)) {
+      console.log('router: handle for people '+hash);
+      window.location.hash = ''
+      routes.people()
     } else {
       console.log('router: handle for overview' );
       window.location.hash = ''
@@ -22,10 +27,13 @@ const router = {
     window.addEventListener('hashchange', () => {
 
       let movieID = window.location.hash.substr(1)
-      if (window.localStorage.getItem('movie-'+window.location.hash.split('#')[1])){
+
+      if (movieID){
         router.handle(movieID)
+      } else if (window.localStorage.getItem('people-'+window.location.hash.split('#')[1])) {
+        
       } else {
-        render.detail(movieID)
+        render.error(err)
       }
     })
   }
